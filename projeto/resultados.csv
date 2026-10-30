@@ -1,0 +1,11 @@
+﻿rotulo;rodada;replicas;taxa;rotas_ok;sucessos_por_s;falhas_pct;p95_latencia_ok_ms;dropped_iterations_medicao;status_job;cpu_observada_por_pod;distribuicao_aceitos_por_pod;observacoes
+piloto;calibracao;1;6;120;2;66,66;431,5;0;Failed;max xdvg7=317m;xdvg7=+141/-280;tentativas=360 | media_ok_ms=399,4 | exit_k6=99
+3pods-a;A;3;6;215;3,58;40,44;472,9;0;Failed;max 4gz4p=194m xdvg7=171m zmdmh=198m;4gz4p=+78/-47 xdvg7=+81/-56 zmdmh=+94/-66;tentativas=361 | media_ok_ms=421,3 | exit_k6=99
+1pod-a;A;1;6;120;2;66,75;434,4;0;Failed;max xdvg7=355m;xdvg7=+140/-280;tentativas=361 | media_ok_ms=428,8 | exit_k6=99
+2pods-a;A;2;6;178;2,97;50,69;482,5;0;Failed;max xdvg7=185m zntfk=228m;xdvg7=+102/-110 zntfk=+106/-103;tentativas=361 | media_ok_ms=425,6 | exit_k6=99
+2pods-b;B;2;6;177;2,95;50,83;446,1;0;Failed;max xdvg7=220m zntfk=231m;xdvg7=+107/-127 zntfk=+98/-88;tentativas=360 | media_ok_ms=425,6 | exit_k6=99
+3pods-b;B;3;6;225;3,75;37,67;449,6;0;Failed;max 269xt=227m xdvg7=216m zntfk=240m;269xt=+91/-49 xdvg7=+84/-59 zntfk=+85/-53;tentativas=361 | media_ok_ms=430,3 | exit_k6=99
+1pod-b;B;1;6;120;2;66,75;481;0;Failed;max xdvg7=315m;xdvg7=+140/-281;tentativas=361 | media_ok_ms=420,2 | exit_k6=99
+1pod-c;C;1;6;121;2,02;66,48;445,4;0;Failed;max xdvg7=219m;xdvg7=+142/-280;tentativas=361 | media_ok_ms=433,6 | exit_k6=99
+2pods-c;C;2;6;180;3;50,13;446,8;0;Failed;max xdvg7=469m xdwnf=233m;xdvg7=+107/-106 xdwnf=+104/-105;tentativas=361 | media_ok_ms=426,8 | exit_k6=99
+3pods-c;C;3;6;209;3,48;41,94;446,1;0;Failed;max r5ctz=158m xdvg7=295m xdwnf=247m;r5ctz=+81/-60 xdvg7=+81/-60 xdwnf=+79/-59;tentativas=360 | media_ok_ms=432,3 | exit_k6=99

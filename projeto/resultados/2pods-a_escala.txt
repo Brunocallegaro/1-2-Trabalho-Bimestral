@@ -1,0 +1,7 @@
+﻿deployment.apps/rotas scaled
+NAME                    READY   STATUS    RESTARTS   AGE   IP            NODE      NOMINATED NODE   READINESS GATES
+rotas-fc7784c5c-xdvg7   1/1     Running   0          34m   10.244.0.6    ops-lab   <none>           <none>
+rotas-fc7784c5c-zntfk   1/1     Running   0          5s    10.244.0.15   ops-lab   <none>           <none>
+NAME          ADDRESSTYPE   PORTS   ENDPOINTS                AGE
+rotas-zlmkq   IPv4          8000    10.244.0.6,10.244.0.15   32m
+

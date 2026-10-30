@@ -1,0 +1,4 @@
+﻿replicas;medicoes_usadas;mediana_sucessos_por_s;mediana_falhas_pct;mediana_p95_latencia_ok_ms;mediana_latencia_media_ok_ms;max_dropped_iterations
+1;1pod-a 1pod-b 1pod-c;2;66,75;445,4;428,8;0
+2;2pods-a 2pods-b 2pods-c;2,97;50,69;446,8;425,6;0
+3;3pods-a 3pods-b 3pods-c;3,58;40,44;449,6;430,3;0

@@ -1,0 +1,12 @@
+RotaExpress - Kubernetes na pratica (entrega)
+
+projeto/      Pasta para executar a atividade. Abra o PowerShell DENTRO dela.
+              README.md explica tudo; os manifestos estao em projeto/k8s/.
+documentos/   Relatorio (DOCX e PDF), roteiro da apresentacao oral, guia rapido
+              de comandos e a planilha comparativa (XLSX).
+
+SITUACAO DAS EVIDENCIAS
+- Manifestos validados contra o schema do Kubernetes 1.33 (5 validos, 0 invalidos).
+- app.py e carga.js testados FORA do Kubernetes (projeto/validacao_local/).
+- Medicoes 1/2/3 Pods executadas em 24/10/2026 (projeto/resultados.csv, graficos/).
+- Pendente: teste com 6 replicas (Grupo 8) e modelo do processador no relatorio.

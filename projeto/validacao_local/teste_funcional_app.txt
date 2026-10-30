@@ -1,0 +1,56 @@
+# Teste funcional do app.py fora do Kubernetes (2026-10-23T14:57:12-03:00)
+# Python local: Python 3.13.17 | CPUs da VM: 2
+# Processo A: sem limite de CPU (porta 8001). Processo B: cgroup com quota de 50 ms a cada 100 ms = 500m (porta 8000).
+
+$ curl /healthz
+{"status": "ok", "pod": "local-500m"}
+$ curl /readyz
+{"status": "ok", "pod": "local-500m"}
+$ curl / (status e tipo)
+200 text/html; charset=utf-8
+$ curl /api/rota?paradas=2
+{"erro": "Use de 3 a 9 paradas"} HTTP 400
+$ curl /inexistente
+{"erro": "Caminho n\u00e3o encontrado"} HTTP 404
+
+## 10 calculos com paradas=9 SEM limite de CPU (calculo_ms)
+251.8 ms  distancia= 299.03  ordem= [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0]
+222.0 ms  distancia= 299.03  ordem= [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0]
+240.1 ms  distancia= 299.03  ordem= [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0]
+261.8 ms  distancia= 299.03  ordem= [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0]
+228.0 ms  distancia= 299.03  ordem= [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0]
+326.1 ms  distancia= 299.03  ordem= [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0]
+224.6 ms  distancia= 299.03  ordem= [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0]
+217.6 ms  distancia= 299.03  ordem= [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0]
+243.5 ms  distancia= 299.03  ordem= [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0]
+223.1 ms  distancia= 299.03  ordem= [0, 5, 9, 2, 7, 3, 6, 8, 1, 4, 0]
+
+## 10 calculos com paradas=9 COM limite de 500m (calculo_ms)
+417.9 ms
+428.9 ms
+466.6 ms
+586.0 ms
+487.5 ms
+479.8 ms
+427.6 ms
+445.5 ms
+582.3 ms
+478.7 ms
+
+## Dois pedidos simultaneos no processo limitado (espera-se um 200 e um 503)
+{"erro": "Calculador ocupado. Tente novamente.", "pod": "local-500m"}  <- pedido 2: HTTP 503
+pedido 1: HTTP 200
+## Log do processo limitado
+RotaExpress em http://localhost:8000
+aceito calculo_ms=417.9 total_aceitos=1 total_recusados=0
+aceito calculo_ms=428.9 total_aceitos=2 total_recusados=0
+aceito calculo_ms=466.6 total_aceitos=3 total_recusados=0
+aceito calculo_ms=586.0 total_aceitos=4 total_recusados=0
+aceito calculo_ms=487.5 total_aceitos=5 total_recusados=0
+aceito calculo_ms=479.8 total_aceitos=6 total_recusados=0
+aceito calculo_ms=427.6 total_aceitos=7 total_recusados=0
+aceito calculo_ms=445.5 total_aceitos=8 total_recusados=0
+aceito calculo_ms=582.3 total_aceitos=9 total_recusados=0
+aceito calculo_ms=478.7 total_aceitos=10 total_recusados=0
+recusado total_aceitos=10 total_recusados=1
+aceito calculo_ms=499.0 total_aceitos=11 total_recusados=1

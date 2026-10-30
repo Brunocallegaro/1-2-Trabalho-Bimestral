@@ -1,0 +1,5 @@
+﻿NAME    STATUS   COMPLETIONS   DURATION   AGE
+carga   Failed   0/1           88s        88s
+condicoes=FailureTarget Failed
+exit_code_k6=99
+

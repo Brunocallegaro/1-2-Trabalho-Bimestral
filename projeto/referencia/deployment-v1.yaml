@@ -1,0 +1,28 @@
+# Primeira versão do Deployment (Guia, passo 3.1).
+# Use só na primeira passada: copie para k8s/deployment.yaml OU aplique direto:
+#   kubectl apply -f referencia/deployment-v1.yaml
+# Depois aplique a versão completa (k8s/deployment.yaml, passo 3.6) para gerar
+# a segunda revisão e ver o rolling update.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rotas
+  namespace: ops-lab
+  labels:
+    app: rotas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rotas
+  template:
+    metadata:
+      labels:
+        app: rotas
+    spec:
+      containers:
+        - name: rotas
+          image: rotas:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000

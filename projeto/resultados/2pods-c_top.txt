@@ -1,0 +1,22 @@
+﻿--- leitura 1 (01:54:39)
+NAME                    CPU(cores)   MEMORY(bytes)   
+rotas-fc7784c5c-xdvg7   469m         14Mi            
+--- leitura 2 (01:54:54)
+NAME                    CPU(cores)   MEMORY(bytes)   
+rotas-fc7784c5c-xdvg7   469m         14Mi            
+--- leitura 3 (01:55:09)
+NAME                    CPU(cores)   MEMORY(bytes)   
+carga-5fkv4             14m          22Mi            
+rotas-fc7784c5c-xdvg7   122m         14Mi            
+rotas-fc7784c5c-xdwnf   233m         15Mi            
+--- leitura 4 (01:55:24)
+NAME                    CPU(cores)   MEMORY(bytes)   
+carga-5fkv4             14m          22Mi            
+rotas-fc7784c5c-xdvg7   122m         14Mi            
+rotas-fc7784c5c-xdwnf   233m         15Mi            
+--- leitura 5 (01:55:39)
+NAME                    CPU(cores)   MEMORY(bytes)   
+carga-5fkv4             14m          22Mi            
+rotas-fc7784c5c-xdvg7   122m         14Mi            
+rotas-fc7784c5c-xdwnf   233m         15Mi            
+
